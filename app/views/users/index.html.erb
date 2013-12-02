@@ -1,0 +1,41 @@
+<h1>High Scores</h1>
+
+<p><%= link_to 'New User', new_user_path %> &nbsp 
+<% if @user != nil%>
+<a href='/users/sign'>Sign In</a>
+<% else %>
+<a href='/users/hangman'>Hangman</a>
+<% end %> </p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th> </th>
+      <th> </th>
+      <th>Score</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td> </td>
+	<td> </td>
+        <td><%= user.score %></td>
+	<td></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
