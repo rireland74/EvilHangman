@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_name(params[:name])
     #if :password == params[:password]
       session[:user_id] = user.id
-      redirect_to localhost:3000/hangman #'hangman'
+      redirect_to hangman_url
     #else
       #redirect_to login_url, alert: 'Invalid User/Password combination'
     #end
@@ -18,6 +18,5 @@ class SessionsController < ApplicationController
   end
 
   def hangman
-    redirect_to localhost:3000/hangman
   end
 end
